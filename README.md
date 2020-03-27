@@ -57,7 +57,7 @@ The evidence accumulation model is an approach for collecting the information of
          by one of the evaluation methods {'ac', 'anc', 'adnc'}
  
 #### Methods:
-#### fit(X):
+##### fit(X):
       Compute clusters.
 
       Parameters
@@ -69,7 +69,7 @@ The evidence accumulation model is an approach for collecting the information of
       self
           Fitted estimator.
           
-#### fit_predict(X):
+##### fit_predict(X):
       Compute clusters  and predict clustered index for each sample.
 
       Parameters
@@ -81,7 +81,7 @@ The evidence accumulation model is an approach for collecting the information of
       labels : array, shape [n_samples,]
           Index of the cluster each sample belongs to.
           
-#### draw_vat(figsize=(10, 10))
+##### draw_vat(figsize=(10, 10))
 
      Calculate and display the matrix for visual assessment of the cluster trend.
 
