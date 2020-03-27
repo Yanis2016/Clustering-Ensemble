@@ -376,9 +376,9 @@ class CluterEnsemble:
 
                 2 - update of the co-association matrix.
 
-                3 - generation of partitions by applying the clustering algorithm based on normalized cuts 
-                    on the co_assiation matrix when the negative proof is removed.
-
+                3 - removal of negative the similarity evidence from the co-association matrix 
+                     and generation of several final partitions with the clustering algorithm based on normalized cuts.
+                
                 4 - selection of the final score with a higher degree of confidence.
             
             Parameters
