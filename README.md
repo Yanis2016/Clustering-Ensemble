@@ -1,4 +1,4 @@
-# Ensemble-clustering
+# Clustering Ensemble
 
 ## Highlights
 * Some evidences in co-association matrix are removed to improve the performance of clustering ensemble
