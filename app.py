@@ -60,7 +60,7 @@ def generate_data(dataset):
         y = np.ravel(y)
         return X, y
 
-def read_data_from_file(filename, contents):
+def read_data_from_file(filename, contents, target):
     print("read from file")
     if contents != None:
         content_type, content_string = contents.split(',')
@@ -73,6 +73,8 @@ def read_data_from_file(filename, contents):
         elif 'xls' in filename:
             # Assume that the user uploaded an excel file
             df = pd.read_excel(io.BytesIO(decoded))
+        if target == 'No':
+            return np.asarray(df)
         X = np.asarray(df.iloc[:, 0:df.shape[1]-1])
         y = np.asarray(df.iloc[:, -1])
         return X, y
@@ -334,7 +336,7 @@ def update_clustering_graph(n_clicks,
         X, y = generate_data(dataset)
     else :
         try:
-            X, y = read_data_from_file(filename, contents)
+            X, y = read_data_from_file(filename, contents, target)
         except :
             return dcc.Markdown(
                 '''
