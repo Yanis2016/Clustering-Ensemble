@@ -1,0 +1,64 @@
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Banner
+- Scalable Container
+- Remove Undo
+
+
+/* Banner
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.banner {
+    height: 75px;
+    background-color: #2f3445; /* Machine Learning Color is orange */
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.banner h2 {
+    color: rgb(202, 213, 218);
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size:4rem;
+    line-height:1;
+}
+
+.banner Img {
+    position: relative;
+    float: right;
+    height: 75px;
+}
+
+/* Scalable Container
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container.scalable {
+    width: 90%;
+    height: 100%;
+    max-width: none;
+}
+
+
+.container.scalable2 {
+    width: 90%;
+    height: 100%;
+    max-width: none;
+}
+
+
+/* Remove Undo
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+._dash-undo-redo {
+  display: none;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+}
+
+.beg{
+    margin: 0px; 
+    height: 100%;  
+}
