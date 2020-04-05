@@ -8,6 +8,8 @@ from itertools import combinations
 import pandas as pd
 from  scipy.spatial.distance import cdist
 from ClusteringNormalizedCuts import ClusteringNormalizedCuts
+from functools import partial
+import multiprocessing as mlp
 
 class KMeans:
     """
@@ -300,6 +302,9 @@ def vat(CM):
     return cm_vat, np.array(Q)
 
 
+def gen_base_partition(X, k, It):
+    return KMeans(k, max_iter=It).fit_predict(X)
+
 
 def gen_base_partition_by_kmeans(X, M=10, It=4, Ktype='Random'):
     """
@@ -328,13 +333,19 @@ def gen_base_partition_by_kmeans(X, M=10, It=4, Ktype='Random'):
         
     PI = []
     CM =  CM = np.zeros((X.shape[0], X.shape[0]))
-    for i in range(M):
-        K = 0
-        if Ktype == 'Fixed':
-            k = int(np.ceil(np.sqrt(N)))
-        else:
-            k = np.random.randint(2, np.ceil(np.sqrt(N)), 1)[0]
-        PI.append(KMeans(k, max_iter=It).fit_predict(X))
+    K = 0
+    if Ktype == 'Fixed':
+        k = [int(np.ceil(np.sqrt(N)))]*M
+    else:
+        k = np.random.randint(2, np.ceil(np.sqrt(N)), M)
+    kmeans = partial(gen_base_partition, X, It=It)
+    
+    pool = mlp.Pool(mlp.cpu_count())
+    
+    PI = pool.map(kmeans, k)
+    pool.close()
+    pool.join()
+
     return np.transpose(PI)
 
 
@@ -353,15 +364,12 @@ def gen_cm(PI):
         CM : ndarray of shape(n_samples, n_samples)
             Co-association matrice.
     """
-    CM = np.zeros((PI.shape[0], PI.shape[0]))
-    for i in range(PI.shape[1]):
-        for k in np.unique(PI[:, i]):
-            index_objects = np.arange(PI.shape[0])[PI[:, i] == k]
-            for xi, xj in combinations(index_objects, 2):
-                CM[xi, xj] += 1
-                CM[xj, xi] += 1
-    return (CM / PI.shape[1] + np.identity(PI.shape[0]))
-
+    n_samples = PI.shape[0]
+    n_partitions = PI.shape[1]
+    cm = np.zeros((n_samples, n_samples))
+    for i in range(n_samples):
+        cm[i, :] = (PI == PI[i, :]).sum(axis=1)
+    return cm/n_partitions
 
 class CluterEnsemble:
     
@@ -376,9 +384,9 @@ class CluterEnsemble:
 
                 2 - update of the co-association matrix.
 
-                3 - removal of negative the similarity evidence from the co-association matrix 
-                     and generation of several final partitions with the clustering algorithm based on normalized cuts.
-                
+                3 - generation of partitions by applying the clustering algorithm based on normalized cuts 
+                    on the co_assiation matrix when the negative proof is removed.
+
                 4 - selection of the final score with a higher degree of confidence.
             
             Parameters
