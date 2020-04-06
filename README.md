@@ -95,4 +95,4 @@ The evidence accumulation model is an approach for collecting the information of
 
 ## Questions?
 Don't hesitate to contact me if you have any questions regarding this work.  
-Email: yanis.aithammou@gmail.com 
+Email: yanis.aithammou@outlook.com 
