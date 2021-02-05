@@ -485,6 +485,8 @@ class CluterEnsemble:
         self.quality_of_partitions = np.array(self.quality_of_partitions).ravel()
         self.labels = self.partitions[:, self.quality_of_partitions.argmax()]
         
+        return self
+        
         
     def fit_predict(self, X):
         """
