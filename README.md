@@ -3,6 +3,11 @@
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-08-36.png)
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-06-45.png)
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-06-54.png)
+![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-07-08.png)
+![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-07-43.png)
+![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-07-58.png)
+
+
 ## Highlights
 * Some evidences in co-association matrix are removed to improve the performance of clustering ensemble
 * An internal validity index that only uses co-association matrix information is proposed for clustering ensemble.
