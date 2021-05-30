@@ -1,4 +1,4 @@
-# Clustering Ensemble
+# Ensemble Clustering
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-06-31.png)
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-08-36.png)
 ![Cat](https://github.com/Yanis2016/Clustering-Ensemble/blob/master/Images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-04-05%2008-06-45.png)
