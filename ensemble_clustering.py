@@ -1,6 +1,6 @@
 #coding:utf-8
 
-#Copyright (C) 2020, Mr.Yanis AIT HAMMOU, contacte : (yanis.aithammou@outlook.fr)
+#Copyright (C) 2020, Mr.Yanis AIT HAMMOU, contact : (yanis.aithammou@outlook.fr)
 
 import numpy as np
 import matplotlib.pyplot as plt 
